@@ -163,7 +163,17 @@ class App extends Component {
         <div className="ex-space">
           <h4 className="ex-title">Exercise 4</h4>
           <div className="exercise" id="ex-4">
-            {/* your code here */}
+            {this.state.currentPage == "Landing" ? (
+              <Landing
+                user={this.state.user}
+                storeData={this.state.store}
+              ></Landing>
+            ) : (
+              <Home
+                storeData={this.state.store}
+                shouldDiscount={this.state.shouldDiscount}
+              ></Home>
+            )}
           </div>
         </div>
       </div>
