@@ -123,7 +123,8 @@ class App extends Component {
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 7</h4>
           <div className="exercise" id="spotcheck-7">
-            {/* your code here */}
+            <Calendar reservations={this.state.reservations} />
+            <Register reservations={this.state.reservations} />
           </div>
         </div>
 
