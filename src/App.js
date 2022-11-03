@@ -32,6 +32,11 @@ class App extends Component {
       ],
       shouldDiscount: false,
       currentPage: "Landing",
+      companies: [
+        { name: "Tesla", revenue: 140 },
+        { name: "Microsoft", revenue: 300 },
+        { name: "Google", revenue: 600 },
+      ],
     };
   }
   // SPOT-CHECK-2:
@@ -39,6 +44,8 @@ class App extends Component {
 
   // SPOT-CHECK-3:
   // your upperCase method here
+
+  upperCase = (name) => name.toUpperCase();
 
   generateCompanyTags(companies) {
     return companies.map((c) => <Company name={c.name} revenue={c.revenue} />);
@@ -63,35 +70,53 @@ class App extends Component {
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 2</h4>
           <div className="exercise" id="spotcheck-2">
-            {this.generateCompanyTags(companies)}
+            {companies.map((c) => (
+              <Company
+                key={c.name}
+                name={this.upperCase(c.name)}
+                revenue={c.revenue}
+              />
+            ))}
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 3</h4>
           <div className="exercise" id="spotcheck-3">
-            {/* your code here */}
+            {companies.map((c) => (
+              <Company
+                key={c.name}
+                name={this.upperCase(c.name)}
+                revenue={c.revenue}
+              />
+            ))}
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 4</h4>
           <div className="exercise" id="spotcheck-4">
-            {/* your code here */}
+            <Wardrobe></Wardrobe>
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 5</h4>
           <div className="exercise" id="spotcheck-5">
-            {/* your code here */}
+            <Wardrobe2></Wardrobe2>
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 6</h4>
           <div className="exercise" id="spotcheck-6">
-            {/* your code here */}
+            {this.state.companies.map((c) => (
+              <Company
+                key={c.name}
+                name={this.upperCase(c.name)}
+                revenue={c.revenue}
+              ></Company>
+            ))}
           </div>
         </div>
 
