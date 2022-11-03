@@ -40,6 +40,10 @@ class App extends Component {
   // SPOT-CHECK-3:
   // your upperCase method here
 
+  generateCompanyTags(companies) {
+    return companies.map((c) => <Company name={c.name} revenue={c.revenue} />);
+  }
+
   render() {
     let companies = [
       { name: "Tesla", revenue: 140 },
@@ -59,7 +63,7 @@ class App extends Component {
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 2</h4>
           <div className="exercise" id="spotcheck-2">
-            {/* your code here */}
+            {this.generateCompanyTags(companies)}
           </div>
         </div>
 
