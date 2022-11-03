@@ -138,7 +138,11 @@ class App extends Component {
         <div className="ex-space">
           <h4 className="ex-title">Exercise 2</h4>
           <div className="exercise" id="ex-2">
-            {/* your code here */}
+            <Landing
+              user={this.state.user}
+              storeData={this.state.store}
+            ></Landing>
+            <Home storeData={this.state.store}></Home>
           </div>
         </div>
 

@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Landing extends Component {
-    /* your code here */
-
-
-    render() {
-        return {/* your code here */ }
-
-    }
+  render() {
+    let hottest = this.props.storeData.filter((s) => s.hottest);
+    console.log(hottest);
+    return (
+      <div>
+        <div> Welcome, {this.props.user} </div>
+        <div> The hottest item is {hottest[0].item} </div>
+      </div>
+    );
+  }
 }
 
-export default Landing
+export default Landing;
